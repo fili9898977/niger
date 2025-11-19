@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jak działa silnik spalinowy — szczegółowy przewodnik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Jak działa silnik spalinowy</h1>
+      <div class="hero-graphic">
+        <img src="images/hero-graphic.png" alt="hero-graphic.png — miejsce na grafikę nagłówka" onerror="this.classList.add('missing')">
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Sekcje przewodnika">
+      <button role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview" class="tab">Przegląd</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-cycle" id="tab-cycle" class="tab">Cykl pracy</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-parts" id="tab-parts" class="tab">Podzespoły</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-systems" id="tab-systems" class="tab">Układy</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-maintenance" id="tab-maintenance" class="tab">Obsługa i eksploatacja</button>
+    </nav>
+
+    <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" class="panel is-active">
+      <h2>Przegląd działania silnika</h2>
+      <p>Silnik spalinowy przetwarza energię chemiczną paliwa na pracę mechaniczną. Większość samochodów używa silników tłokowych czterosuwowych — to znaczy, że cykl pracy składa się z czterech podstawowych etapów: ssanie, sprężanie, spalanie (praca) i wydech.</p>
+
+      <details class="detail">
+        <summary>Dlaczego tłok porusza wał korbowy?</summary>
+        <div class="detail-body">
+          Po zapłonie mieszanki paliwowo-powietrznej nagły wzrost ciśnienia wypycha tłok w dół. Tłok połączony jest z korbowodem, który zamienia ruch posuwisto-zwrotny na ruch obrotowy wału korbowego.
+          <p>Energia ciśnienia działa na powierzchnię główki tłoka; z uwagi na momenty sił i różnice kąta korbowodu, wynikowa składowa powoduje obrót wału. W praktyce moment obrotowy zależy od momentu rozwoju ciśnienia, skoku tłoka i przełożenia mechanicznego (koło zamachowe, skrzynia).</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Rodzaje silników</summary>
+        <div class="detail-body">
+          Omówienie: wolnossące vs doładowane (turbo/kompresor), benzynowe vs wysokoprężne (diesel), silniki z zapłonem iskrowym i samoczynnym.
+          <p>W silnikach benzynowych ważne są aspekty zapłonu i składu mieszanki (stosunek powietrze/paliwo, kąt zapłonu). W dieslach kluczowe są ciśnienia wtrysku i charakterystyka rozpylania. Doładowanie zwiększa masę ładunku w cylindrze, poprawiając moc, ale wymaga kontroli temperatury i zapobiegania spalaniu stukowemu.</p>
+          <p>Wybór silnika wpływa na masę, zużycie paliwa, koszty serwisu i trwałość. Silniki wysokoprężne obecnie montowane są głównie tam, gdzie pożądany jest wysoki moment przy niskich obrotach.</p>
+        </div>
+      </details>
+    </section>
+
+    <section id="panel-cycle" role="tabpanel" aria-labelledby="tab-cycle" class="panel">
+      <h2>Cykl pracy (czterosuwowy)</h2>
+
+      <details class="detail">
+        <summary>1. Suw ssania</summary>
+        <div class="detail-body">
+          Zawór ssący otwiera się, tłok przemieszcza się w dół, a do cylindra zasysana jest mieszanka paliwowo-powietrzna (w silniku benzynowym) lub powietrze (w dieslu). Ilość zasysanego ładunku wpływa na moc i sprawność.
+          <p>W układach z bezpośrednim wtryskiem i kolektorem zmiennej geometrii dopływu powietrza, sterowanie przepływem ma znaczenie dla turbulentności mieszanki, która z kolei wpływa na szybkość spalania i emisje.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>2. Suw sprężania</summary>
+        <div class="detail-body">
+          Zawory się zamykają, tłok porusza się w górę, sprężając ładunek. W silnikach benzynowych mieszanka jest sprężana, a zapłon następuje za pomocą świecy; w silnikach Diesla następuje zapłon samoczynny dzięki wysokiemu ciśnieniu i temperaturze.
+          <p>Stopień sprężania (ratio) jest kluczowy dla sprawności termodynamicznej — wyższy stopień sprężania daje lepszą sprawność, ale zwiększa ryzyko spalania stukowego w silnikach benzynowych. Dlatego stosuje się materiały i systemy sterowania (czujniki knock) do regulacji zapłonu i ciśnienia doładowania.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>3. Suw pracy (spalanie)</summary>
+        <div class="detail-body">
+          Zapłon powoduje gwałtowny wzrost ciśnienia i wypchnięcie tłoka w dół — to etap generowania momentu obrotowego. Energia cieplna przekształcana jest w pracę mechaniczną.
+          <p>Charakterystyka spalania (tempo wzrostu ciśnienia, kąty TDC/ATDC) wpływa na moment i emisje. Nowoczesne systemy sterowania traktują pojedyncze wtryski i kąty zapłonu jako parametry adaptacyjne, by uzyskać optymalną krzywą momentu obrotowego w różnych warunkach obciążenia.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>4. Suw wydechu</summary>
+        <div class="detail-body">
+          Zawór wydechowy otwiera się, tłok porusza się w górę i usuwa spaliny z cylindra, przygotowując go do kolejnego cyklu.
+          <p>Efektywność usuwania spalin zależy od geometrii kolektora, długości kanałów wydechowych oraz stosunku przeciwciśnień. Przy niewłaściwym odprowadzaniu spalin wzrasta backpressure, co obniża moc i może zwiększać temperatury spalin.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Cykl w skrócie — wykresy i parametry</summary>
+        <div class="detail-body">
+          Wykresy ciśnienie–objętość (p–V) opisują pracę wykonaną przez cylinder. Wysokość i kształt krzywej zależą od stopnia sprężania, paliwa i doładowania.
+        </div>
+      </details>
+    </section>
+
+    <section id="panel-parts" role="tabpanel" aria-labelledby="tab-parts" class="panel">
+      <h2>Główne podzespoły silnika — szczegółowe opisy</h2>
+
+      <details class="detail">
+        <summary>Tłok</summary>
+        <div class="detail-body">
+          Tłok to element wykonujący ruch posuwisto-zwrotny w cylindrze. Podczas suwu ssania przesuwa się w dół, zasysając ładunek; podczas sprężania porusza się w górę, zwiększając ciśnienie i temperaturę mieszanki; przy suwie pracy odbiera siłę powstałą w wyniku spalania i przenosi ją przez korbowód na wał korbowy. Tłok przenosi także ciepło z komory spalania do ścian cylindra i do pierścieni, które przekazują je dalej do chłodzącego płynu i bloku silnika.
+          <figure class="photo">
+            <img src="images/piston.jpg" alt="Tłok - przekrój i pierścienie" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Pierścienie tłokowe</summary>
+        <div class="detail-body">
+          Zestaw pierścieni (uszczelniający, skraplający olej i czasami dodatkowy) zapewnia szczelność komory spalania, reguluje zużycie oleju oraz odprowadza ciepło z tłoka do ścianki cylindra. Zużyte pierścienie powodują spadek ciśnienia sprężania i nadmierne spalanie oleju.
+          <figure class="photo">
+            <img src="images/piston-rings.jpg" alt="Pierścienie tłokowe" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Korbowód</summary>
+        <div class="detail-body">
+          Korbowód łączy tłok z wałem korbowym. Przenosi siłę osiową tłoka i zamienia ją w moment obrotowy. Łożysko korbowodu umożliwia obrót wokół czopa wału i musi być dobrze smarowane.
+          <figure class="photo">
+            <img src="images/connecting-rod.jpg" alt="Korbowód" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Wał korbowy</summary>
+        <div class="detail-body">
+          Wał korbowy zamienia ruch posuwisto-zwrotny tłoków na ruch obrotowy. Wał posiada przeciwwagi redukujące drgania oraz czopy i panewki, które współpracują z łożyskami. Wał korbowy przenosi moment na koło zamachowe i dalej przez skrzynię biegów na koła pojazdu.
+          <figure class="photo">
+            <img src="images/crankshaft.jpg" alt="Wał korbowy" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Blok cylindrów</summary>
+        <div class="detail-body">
+          Blok silnika stanowi strukturę nośną cylindrów, kanałów chłodzenia i otworów montażowych. W nim osadzone są tuleje/cylindry oraz miska olejowa. Materiał i konstrukcja wpływają na sztywność, odprowadzanie ciepła i trwałość.
+          <figure class="photo">
+            <img src="images/engine-block.jpg" alt="Blok silnika" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Głowica cylindrów</summary>
+        <div class="detail-body">
+          Głowica zamyka komorę spalania od góry i zawiera kanały dolotowe/wydechowe, zawory, gniazda zaworowe, gniazda świec i kanały chłodzenia. Kształt komory wpływa na spalanie i emisje.
+          <figure class="photo">
+            <img src="images/cylinder-head.jpg" alt="Głowica cylindrów" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Zawory i układ rozrządu</summary>
+        <div class="detail-body">
+          Zawory ssące i wydechowe wraz z prowadnicami i sprężynami otwierają i zamykają dopływ mieszanki i odpływ spalin w odpowiednim czasie. Rozrząd (wałki rozrządu, pasek/łańcuch rozrządu, napinacze) zapewnia precyzyjne timing otwarcia zaworów względem położenia tłoka. Błąd w rozrządzie powoduje utratę mocy lub kolizję zaworów z tłokami w silnikach z kolizyjnymi zaworami.
+          <figure class="photo">
+            <img src="images/valves-camshaft.jpg" alt="Zawory i wałek rozrządu" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ wtryskowy i pompa paliwa</summary>
+        <div class="detail-body">
+          Wtryskiwacze rozpyłają paliwo w formie kropelek o określonej wielkości, sterowane czasem i ilością przez ECU. Pompa paliwowa dostarcza paliwo pod odpowiednim ciśnieniem; w układach wysokociśnieniowych (diesel, bezpośredni wtrysk benzyny) wymagane są wysokie ciśnienia i precyzyjna regulacja.
+          <figure class="photo">
+            <img src="images/injector-fuel-pump.jpg" alt="Wtryskiwacz i pompa paliwa" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ zapłonowy (świece, cewki)</summary>
+        <div class="detail-body">
+          W silnikach benzynowych układ zapłonowy generuje iskrę w odpowiednim momencie, inicjując spalanie mieszanki. Współczesne cewki indywidualne sterowane są przez ECU i muszą utrzymać odpowiednią energię zapłonu.
+          <figure class="photo">
+            <img src="images/spark-plug-coil.jpg" alt="Świeca zapłonowa i cewka" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ dolotowy (kolektor, przepustnica)</summary>
+        <div class="detail-body">
+          Układ dolotowy doprowadza powietrze do cylindrów; obejmuje filtr powietrza, przewody, kolektor dolotowy i przepustnicę. Kształt kolektora oraz długość kanałów wpływają na napełnienie cylindra i moment obrotowy w określonym zakresie obrotów.
+          <figure class="photo">
+            <img src="images/intake-manifold.jpg" alt="Kolektor dolotowy" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Doładowanie: turbo i intercooler</summary>
+        <div class="detail-body">
+          Turbosprężarka wykorzystuje energię spalin do sprężenia powietrza dolotowego, zwiększając masę ładunku w cylindrze. Intercooler schładza sprężone powietrze, zwiększając jego gęstość i odporność na spalanie stukowe. Oba elementy wymagają kontroli temperatury i smarowania (turbo).
+          <figure class="photo">
+            <img src="images/turbo-intercooler.jpg" alt="Turbosprężarka i intercooler" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ wydechowy i oczyszczanie spalin</summary>
+        <div class="detail-body">
+          Kolektor wydechowy zbiera spaliny z cylindrów; katalizator i filtr cząstek stałych (DPF) redukują emisje szkodliwych związków. Sensory (lambda/O2) monitorują skład spalin, pozwalając ECU regulować mieszankę paliwowo-powietrzną.
+          <figure class="photo">
+            <img src="images/exhaust-catalyst.jpg" alt="Kolektor i katalizator" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ smarowania (pompa, filtr, miska olejowa)</summary>
+        <div class="detail-body">
+          Pompa olejowa tłoczy olej przez kanały do panewkowych łożysk wału korbowego, korbowodów i rozrządu; filtr usuwa zanieczyszczenia. Olej zmniejsza tarcie, chłodzi i chroni elementy przed przyspieszonym zużyciem.
+          <figure class="photo">
+            <img src="images/oil-system.jpg" alt="Układ smarowania" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ chłodzenia (pompa wody, chłodnica, termostat)</summary>
+        <div class="detail-body">
+          Płyn chłodzący odbiera ciepło z kanałów w bloku i głowicy i oddaje je w chłodnicy. Termostat reguluje przepływ, a pompa wody utrzymuje cyrkulację. Niewłaściwe chłodzenie prowadzi do przegrzewania i uszkodzeń głowicy/bloku.
+          <figure class="photo">
+            <img src="images/cooling-system.jpg" alt="Układ chłodzenia" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Elektronika i czujniki (ECU, czujnik położenia wału)</summary>
+        <div class="detail-body">
+          ECU steruje wtryskiem, zapłonem, recyrkulacją spalin i doładowaniem. Czujniki (położenia wału i wałka, temperatury, ciśnienia doładowania, przepływu powietrza, lambda) dostarczają sygnały do ECU, które optymalizuje parametry pracy.
+          <figure class="photo">
+            <img src="images/ecu-sensors.jpg" alt="ECU i czujniki" onerror="this.classList.add('missing')">
+          </figure>
+        </div>
+      </details>
+    </section>
+
+    <section id="panel-systems" role="tabpanel" aria-labelledby="tab-systems" class="panel">
+      <h2>Układy wspomagające</h2>
+
+      <details class="detail">
+        <summary>Układ chłodzenia</summary>
+        <div class="detail-body">
+          Płyn chłodzący krąży przez blok silnika i chłodnicę, odprowadzając ciepło. Termostat reguluje temperaturę pracy silnika.
+          <p>Typowe problemy: kamień w układzie, nieszczelne przewody, awarie termostatu. Regularna wymiana płynu chłodzącego i kontrola ciśnienia układu przedłużają żywotność głowicy i uszczelki pod głowicą.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ smarowania</summary>
+        <div class="detail-body">
+          Olej silnikowy smaruje łożyska, tłoki i rozrząd, zmniejsza tarcie i odprowadza część ciepła. Filtr oleju oczyszcza olej z zanieczyszczeń.
+          <p>Ważne parametry: lepkość oleju (SAE), specyfikacja producenta (API/ACEA), ciśnienie oleju przy rozruchu i przy pracy. Niski poziom oleju szybko prowadzi do uszkodzeń panewkowych.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Układ dolotowy i wydechowy</summary>
+        <div class="detail-body">
+          Układ dolotowy przygotowuje powietrze/mieszankę, układ wydechowy odprowadza spaliny; katalizator i filtr cząstek stałych redukują emisję.
+          <p>Diagnostyka: pomiary spadków ciśnienia w dolocie, kontrola sond lambda, inspekcja stanu katalizatora i filtra DPF. Problemy z dolotem często objawiają się spadkiem mocy i niestabilną pracą silnika.</p>
+        </div>
+      </details>
+    </section>
+
+    <section id="panel-maintenance" role="tabpanel" aria-labelledby="tab-maintenance" class="panel">
+      <h2>Obsługa i eksploatacja</h2>
+
+      <details class="detail">
+        <summary>Regularne czynności</summary>
+        <div class="detail-body">
+          Wymiana oleju i filtrów, kontrola rozrządu, świec, stanu układu chłodzenia i ciśnienia doładowania. To podstawy długowieczności silnika.
+          <p>Harmonogram serwisowy powinien uwzględniać warunki eksploatacji — miasto, trasy autostradowe, holowanie — ponieważ częstotliwość wymiany płynów i filtrów zależy od obciążenia silnika. Monitorowanie parametrów (kontrolki, odczyty z ECU) zapobiega poważnym awariom.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Najczęstsze problemy</summary>
+        <div class="detail-body">
+          Przegrzewanie, utrata kompresji, zużycie pierścieni, nieszczelności układu chłodzenia, problemy z wtryskiem paliwa i zapłonem.
+          <p>Przykłady: spadek kompresji wskazuje zużycie pierścieni lub zaworów; biały dym może wskazywać na przedostawanie się płynu chłodzącego do komory spalania (uszkodzona uszczelka pod głowicą); szarpanie przy przyspieszaniu często jest efektem wadliwych wtrysków lub zapłonu.</p>
+        </div>
+      </details>
+
+      <details class="detail">
+        <summary>Wskazówki diagnostyczne</summary>
+        <div class="detail-body">
+          Odczyty parametrów z ECU, analiza spalin, test kompresji, kontrola ciśnienia paliwa i szczelności dolotu.
+          <p>Użyteczne testy: pomiar ciśnień sprężania w cylindrach, test szczelności zaworów, kontrola czujnika MAF i sond lambda, pomiar ciśnienia doładowania. Dokumentowanie odczytów podczas diagnostyki ułatwia identyfikację trendów i predykcję awarii.</p>
+        </div>
+      </details>
+    </section>
+
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
